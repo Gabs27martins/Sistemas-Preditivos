@@ -1,0 +1,85 @@
+:root {
+  --verde-claro: #4caf50;
+  --verde-escuro: #2c6b2f;
+  --preto: #000000;
+  --branco: #ffffff;
+  height: 100vh
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: var(--branco);
+  color: var(--preto);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;  
+  box-sizing: border-box;
+}
+
+h2 {
+  color: var(--verde-escuro);
+  position: fixed;
+  left: 1vw;
+  top: 5vh;
+  margin-bottom: 30px;
+}
+
+form {
+  background-color: var(--branco);
+  border: 2px solid var(--verde-claro);
+  border-radius: 8px;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin-left: 20vw;
+}
+
+label {
+  font-size: 1.1em;
+  color: var(--verde-escuro);
+  margin-bottom: 10px;
+  display: block;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid var(--verde-claro);
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: #f9f9f9;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--verde-claro);
+  color: var(--branco);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--verde-escuro);
+}
+
+h3 {
+  text-align: center;
+  color: var(--verde-escuro);
+  font-size: 1.4em;
+  margin-top: 20px;
+}
+
+div {
+  text-align: center;
+  margin-top: 20px;
+  
+}

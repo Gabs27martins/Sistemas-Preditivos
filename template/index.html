@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Formulário de Empréstimo</title>
+</head>
+
+<body>
+    <h2>Consulta de Status de Empréstimo</h2>
+    <form action="/" method="POST">
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" required><br><br>
+
+
+        <label for="genero">Gênero:</label>
+        <select id="genero" name="genero" required>
+            <option value="0">Masculino</option>
+            <option value="1">Feminino</option>
+        </select><br><br>
+
+
+        <label for="educacao">Nível de Educação:</label>
+        <select id="educacao" name="educacao" required>
+            <option value="0">Ensino Médio</option>
+            <option value="1">Tecnólogo</option>
+            <option value="2">Bacharelado</option>
+            <option value="3">Mestrado</option>
+            <option value="4">Doutorado</option>
+        </select><br><br>
+
+
+        <label for="renda_anual">Renda Anual:</label>
+        <input type="number" id="renda" name="renda_anual" required><br><br>
+
+
+        <label for="experiencia_profissional">Experiência Profissional (anos):</label>
+        <input type="number" id="experiencia_profissional" name="experiencia_profissional" required><br><br>
+
+
+        <label for="posse_casa">Posse da Casa:</label>
+        <select id="posse_casa" name="posse_casa" required>
+            <option value="0">Aluguel</option>
+            <option value="1">Hipoteca</option>
+            <option value="2">Proprietário</option>
+            <option value="3">Outro</option>
+        </select><br><br>
+
+
+        <label for="quantia_emprestimo">Quantia do Empréstimo:</label>
+        <input type="number" id="quantia_emprestimo" name="quantia_emprestimo" required><br><br>
+
+
+        <label for="intencao_emprestimo">Intenção do Empréstimo:</label>
+        <select id="intencao_emprestimo" name="intencao_emprestimo" required>
+            <option value="0">Educação</option>
+            <option value="1">Médico</option>
+            <option value="2">Empreendimento</option>
+            <option value="3">Pessoal</option>
+            <option value="4">Consolidação de Dívidas</option>
+            <option value="5">Melhoria da Casa</option>
+        </select><br><br>
+
+
+        <label for="taxa_juros">Taxa de Juros ao Ano (%):</label>
+        <input type="float" id="taxa_juros" name="taxa_juros" required><br><br>
+
+
+        <label for="percentual_renda">Percentual da Renda Comprometido com o Empréstimo (%):</label>
+        <input type="float" id="percentual_renda" name="percentual_renda" required><br><br>
+
+
+        <label for="hist_credito">Histórico de Crédito (anos):</label>
+        <input type="number" id="hist_credito" name="hist_credito" required><br><br>
+
+
+        <label for="pontuacao_credito">Pontuação de Crédito (0 - 1000):</label>
+        <input type="number" id="pontuacao_credito" name="pontuacao_credito" required><br><br>
+
+        <label for="dividas_anteriores">Dívidas de Empréstimos Anteriores:</label>
+        <select id="dividas_anteriores" name="dividas_anteriores" required>
+            <option value="0">Sim</option>
+            <option value="1">Não</option>
+        </select><br><br>
+
+        <button type="submit">Enviar</button>
+
+        {% if predicao %}
+        <div>
+            <h3>O status do seu pedido de empréstimo foi: {{ predicao }}</h3>
+        </div>
+        {% endif %}
+    </form>
+</body>
+
+</html>
