@@ -2,13 +2,11 @@ from flask import Flask, request, render_template
 import numpy as np
 import pickle
 import pandas as pd
-import plotly.express as px
-import plotly.io as pio
 
 
 app = Flask(__name__, template_folder="template")
 
-# Carga do modelo preditivo
+
 model = pickle.load(open("models/emprestimo-modelo-preditivo.pkl", "rb"))
 
 
@@ -25,7 +23,7 @@ def index():
         quantia_emprestimo = float(request.form["quantia_emprestimo"])
         intencao = int(request.form["intencao_emprestimo"])
         taxa_juros = float(request.form["taxa_juros"]) / 100
-        percentual_renda = float(request.form["percentual_renda"]) /100
+        percentual_renda = float(request.form["percentual_renda"]) / 100
         hist_credito = float(request.form["hist_credito"])
         pontuacao_credito = float(request.form["pontuacao_credito"])
         dividas_anteriores = int(request.form["dividas_anteriores"])

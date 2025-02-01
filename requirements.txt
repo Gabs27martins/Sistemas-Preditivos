@@ -3,3 +3,4 @@ Flask
 scikit-learn
 numpy
 gunicorn
+plotly

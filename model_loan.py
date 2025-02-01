@@ -59,7 +59,9 @@ df["loan_intent"] = df["loan_intent"].map(
         "HOMEIMPROVEMENT": 5,
     }
 )
-df["previous_loan_defaults_on_file"] = df["previous_loan_defaults_on_file"].map({'Yes':0, 'No':1})
+df["previous_loan_defaults_on_file"] = df["previous_loan_defaults_on_file"].map(
+    {"Yes": 0, "No": 1}
+)
 
 
 X = df.drop("loan_status", axis=1)
@@ -92,8 +94,5 @@ print(classification_report(Y_test, RF_pred))
 
 # plt.show()
 
-with open('emprestimo-modelo-preditivo.pkl', 'wb') as f:
+with open("emprestimo-modelo-preditivo.pkl", "wb") as f:
     pickle.dump(RF, f)
-
-
-print(df['credit_score'].describe())
